@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 from mpl_interactions import zoom_factory
+import cv2
 
 plt.rcParams["figure.figsize"] = (17, 10)   # set up the sife of figure
 new_line = "\n"
@@ -20,9 +21,10 @@ class MapScaler:
     """
 
 
-    def __init__(self, raw_file_name: str, raster_scale: str):
+    def __init__(self, raw_file_name: str, current_path: str, raster_scale: str):
         self.raw_file_name = raw_file_name
-        self.raw_map = Image.open(paths.raw_maps+raw_file_name)
+        self.current_path = current_path
+        self.raw_map = Image.open(self.current_path+raw_file_name)
         self.raster_scale = raster_scale
 
 
@@ -168,22 +170,76 @@ class MapScaler:
         else:
             raise ValueError(f"The scale {self.raster_scale} does not have impmented logic")
         
-        return scale
+        return float(scale)
 
 
     def scale_map_with_pillow(self):
-        # not when adual-d > 2CALCULATEDd
-        pass
-    def get_the_scale_with_CV2(self):
-        pass
+        scale = self.get_scale()
+        new_size = (int(self.raw_map.width*scale), int(self.raw_map.height*scale))
 
+        format = input("Enter the file format (without dot) \n").lower()
+        # filter for quality. Common options are: Image.NEAREST -> Fast, lowest quality, Image.BILINEAR -> Moderate quality, Image.BICUBIC -> High quality (default) and Image.LANCZOS -> Best quality for downscaling
+        method = input("Choose scalling method: [ALL/1/2/3/4] \n ALL: all maps\n1: \tNEAREST -> Fast, lowest quality\n 2: \tBILINEAR -> Moderate quality\n 3: \tBICUBIC -> High quality \n 4: \tLANCZOS -> Best quality for downscaling\n")
+        
+
+        if method.lower() == "all":
+            temp_met = 'all'
+            method = "1"
+        if method == "1":
+            self.raw_map.resize(new_size, Image.NEAREST).save(paths.scalled_maps_pillow +self.raw_file_name.split(".")[0] + "_nearrest" + f".{format}")
+            if temp_met == 'all':
+                method = "2"
+        if method == "2": 
+            self.raw_map.resize(new_size, Image.BILINEAR).save(paths.scalled_maps_pillow + self.raw_file_name.split(".")[0] + "_bilinear" + f".{format}")
+            if temp_met == 'all':
+                method = "3"
+        if method == "3": 
+            self.raw_map.resize(new_size, Image.BICUBIC).save(paths.scalled_maps_pillow + self.raw_file_name.split(".")[0] + "_bicubic" + f".{format}")
+            if temp_met == 'all':
+                method = "4"
+        if method == "4":
+            self.raw_map.resize(new_size, Image.LANCZOS).save(paths.scalled_maps_pillow + self.raw_file_name.split(".")[0]+ "_lanczos" + f".{format}")
+        if method.lower() not in ["all", "1", "2", "3", "4"]:
+            raise ValueError("Wrong method")
+       
+
+    def scale_map_with_CV2(self):
+        scale = self.get_scale()
+        img = cv2.imread(self.current_path + self.raw_file_name)
+
+        format = input("Enter the file format (without dot) \n").lower()
+        # cv2.INTER_AREA, Shrinking, Minimizes distortion while downscaling.
+        # cv2.INTER_LINEAR, General resizing, Balances speed and quality
+        # cv2.cv2.INTER_CUBIC, Enlarging, Higher quality for upscaling
+        # cv2.INTER_NEAREST, Fast resizing, Quick but lower quality
+        method = input("Choose scalling method: [ALL/1/2/3/4] \n ALL: all maps\n 1: \tAREA -> Minimizes distortion while downscaling\n 2: \tLINEAR -> Balances speed and quality\n 3: \tCUBIC -> Higher quality for upscaling \n 4: \tNEAREST -> Quick but lower quality\n")
+
+        if method.lower() == "all":
+            temp_met = 'all'
+            method = "1"
+        if method == "1":
+            cv2.imwrite( paths.scalled_maps_cv2 + self.raw_file_name.split(".")[0] + "_interArea" + f".{format}", cv2.resize(img, None, fx=scale, fy=scale, interpolation=cv2.INTER_AREA) )
+            if temp_met == 'all':
+                method = "2"
+        if method == "2": 
+            cv2.imwrite( paths.scalled_maps_cv2 + self.raw_file_name.split(".")[0] + "_interLinear" + f".{format}", cv2.resize(img, None, fx=scale, fy=scale, interpolation=cv2.INTER_LINEAR) )
+            if temp_met == 'all':
+                method = "3"
+        if method == "3": 
+           cv2.imwrite( paths.scalled_maps_cv2 + self.raw_file_name.split(".")[0] + "_interCubic" + f".{format}", cv2.resize(img, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC) )
+           if temp_met == 'all':
+                method = "4"
+        if method == "4":
+            cv2.imwrite( paths.scalled_maps_cv2 + self.raw_file_name.split(".")[0] + "_interNearest" + f".{format}", cv2.resize(img, None, fx=scale, fy=scale, interpolation=cv2.INTER_NEAREST) )
+        if method.lower() not in ["all", "1", "2", "3", "4"]:
+            raise ValueError("Wrong method")
     
 
 
     
 
 if __name__=="__main__":
-    mymap = MapScaler("map.jpg", "1:500")
+    mymap = MapScaler("map.jpg", paths.raw_maps, "1:500")
     #mymap = MapScaler("map2.png") # to tests
     #mymap = MapScaler("map3.jpg")
 # crl + K + C    comment
@@ -203,7 +259,13 @@ if __name__=="__main__":
     #mymap._calculate_lengths_from_file()
 
 # caltulate the cale
-    mymap.get_scale()
+    #mymap.get_scale()
+
+# create map with pillow with pillow:
+    mymap.scale_map_with_pillow()
+
+# check with cv2:
+    #mymap.scale_map_with_CV2()
 
 
 

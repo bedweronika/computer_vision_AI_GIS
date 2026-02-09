@@ -8,3 +8,7 @@ proccesed_maps=f"{files_folder}proccesed_maps/"    # folder with images with map
 
 # csv files
 raw_map_cross_points = f"{files_folder}raw_map_cross_points/" 
+
+# scalled maps
+scalled_maps_pillow = f"{scalled_maps}/pillow/"
+scalled_maps_cv2 = f"{scalled_maps}/cv2/"
