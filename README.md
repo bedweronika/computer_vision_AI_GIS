@@ -7,7 +7,7 @@ project started : 06.02.2026\
 <img width="30%%" height="30%" alt="obraz" src="https://github.com/user-attachments/assets/b5b90ec2-969a-4b64-b204-87f779f2b82e" />
 
 **goal**: 
-based on the legal regulation crate geospatial data base which can automaticaly convert ovject from raster to correct kind of data base object with metadata
+based on the legal regulation create geospatial data base which can automaticaly convert object from raster to correct kind of geospatial data base object with metadata from the raster map
 
 
 
@@ -15,9 +15,9 @@ based on the legal regulation crate geospatial data base which can automaticaly 
 ---
 
 ## 1. START: 
-   * create virtual envitoment using: '''python -m venv venv
-   * acctivate tge enviroment: source .venv/bin/activate (Windows:  .\venv\Scripts\activate)
-   * open terminal and install file requrements.txt with quiery: pip install -r .\requrements.txt
+   * create virtual envitoment using: ```python -m venv venv```
+   * acctivate tge enviroment: source ```.venv/bin/activate``` (Windows:  ```.\venv\Scripts\activate```)
+   * open terminal and install file requrements.txt with quiery: ```pip install -r .\requrements.txt```
 
 ## 2. Files 
 use file paths.py to set up the folders with files
