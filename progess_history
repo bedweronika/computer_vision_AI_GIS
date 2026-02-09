@@ -1,5 +1,24 @@
 20260206 
 start the project, initial the repo and load file
 20260208 
-join local repo with repmote repo, strcrutised the file system
+join local repo with repmote repo, structurise the file system, 
+create class MapScaller with methods get_cross_point_ccordinates_from_raw_map() and save_points_to_file()
+20260209
+MapScaller mathods: _convert_tuple_np_float_to_touple_float(), get_the_scale_from_file()
+
+
+
+
+
+
+ ------------------------------------
+ TODO: 
+ MapScaller
+ - calculate the scale from points
+ - create new map file uing the sclale and compare with Pillow and CV2 libraries
+
+ new class to cut the images:
+ - open file with scaled map
+ - choose the ocjects fro mthe map and save them to image for computer vision/DL
+
 
