@@ -2,10 +2,10 @@
 ### EN: Sigitization of scans of basic raster maps using AI in accordance with applicable legal regulations in Poland
 ### PL: Digitalizacja skanów zasadniczych map rastrowych przy uzyciu AI zgodnie z obowiazujacymi przepisami prawa w Polsce
 
-raw map example:
-<img width="726" height="715" alt="obraz" src="https://github.com/user-attachments/assets/b5b90ec2-969a-4b64-b204-87f779f2b82e" />
+**raw map example**:\
+<img width="30%%" height="30%" alt="obraz" src="https://github.com/user-attachments/assets/b5b90ec2-969a-4b64-b204-87f779f2b82e" />
 
-goal: 
+**goal**: 
 based on the legal regulation crate geospatial data base which can automaticaly convert ovject from raster to correct kind of data base object with metadata
 
 
