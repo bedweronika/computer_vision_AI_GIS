@@ -1,7 +1,7 @@
 # Concept:
-### EN: Sigitization of scans of basic raster maps using AI in accordance with applicable legal regulations in Poland
+### EN: Digitization of scans of basic raster maps using AI in accordance with applicable legal regulations in Poland
 ### PL: Digitalizacja skanów zasadniczych map rastrowych przy uzyciu AI zgodnie z obowiazujacymi przepisami prawa w Polsce
-
+project started : 06.02.2026
 **raw map example**:\
 <img width="30%%" height="30%" alt="obraz" src="https://github.com/user-attachments/assets/b5b90ec2-969a-4b64-b204-87f779f2b82e" />
 
@@ -21,7 +21,7 @@ based on the legal regulation crate geospatial data base which can automaticaly 
 ## 2. Files 
 use file paths.py to set up the folders with files
 
-## 3. Save cross-points 
-from map to scale the map to correct proportion (keep the map content in the same size for diffrent type of cojects in pixels). For that should be used file MapScaler.py
+## 3. Get cross-points for local coordinate system for the picture
+Scale the map to get the map in correct proportions (keep the map content in the same size for diffrent type of objects in pixels). For that should be used file MapScaler.py
 
-project started : 06.02.2026
+
