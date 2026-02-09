@@ -174,6 +174,15 @@ class MapScaler:
 
 
     def scale_map_with_pillow(self):
+        """
+        Docstring for scale_map_with_pillow
+        use Pillow library to scale the map from raw_map and save to the resized file. The method allows to choose the format of the file and scalling method:
+        NEAREST -> Fast, lowest quality, 
+        BILINEAR -> Moderate quality, 
+        BICUBIC -> High quality 
+        LANCZOS -> Best quality for downscaling
+        The file is saved in paths.scalled_maps_pillow
+        """
         scale = self.get_scale()
         new_size = (int(self.raw_map.width*scale), int(self.raw_map.height*scale))
 
@@ -204,13 +213,22 @@ class MapScaler:
        
 
     def scale_map_with_CV2(self):
+        """
+        Docstring for scale_map_with_CV2
+        use CV2 library to scale the map from raw_map and save to the resized file. The method allows to choose the format of the file and scalling method:
+        INTER_AREA -> Shrinking, Minimizes distortion while downscaling.
+        INTER_LINEAR -> General resizing, Balances speed and quality
+        NTER_CUBIC -> Enlarging, Higher quality for upscaling
+        INTER_NEAREST -> Fast resizing, Quick but lower quality
+        The file is saved in paths.scalled_maps_cv2
+        """
         scale = self.get_scale()
         img = cv2.imread(self.current_path + self.raw_file_name)
 
         format = input("Enter the file format (without dot) \n").lower()
         # cv2.INTER_AREA, Shrinking, Minimizes distortion while downscaling.
         # cv2.INTER_LINEAR, General resizing, Balances speed and quality
-        # cv2.cv2.INTER_CUBIC, Enlarging, Higher quality for upscaling
+        # cv2.INTER_CUBIC, Enlarging, Higher quality for upscaling
         # cv2.INTER_NEAREST, Fast resizing, Quick but lower quality
         method = input("Choose scalling method: [ALL/1/2/3/4] \n ALL: all maps\n 1: \tAREA -> Minimizes distortion while downscaling\n 2: \tLINEAR -> Balances speed and quality\n 3: \tCUBIC -> Higher quality for upscaling \n 4: \tNEAREST -> Quick but lower quality\n")
 
@@ -240,8 +258,8 @@ class MapScaler:
 
 if __name__=="__main__":
     mymap = MapScaler("map.jpg", paths.raw_maps, "1:500")
-    #mymap = MapScaler("map2.png") # to tests
-    #mymap = MapScaler("map3.jpg")
+    #mymap = MapScaler("map2.png", paths.raw_maps, "1:500") # to tests
+    #mymap = MapScaler("map3.jpg", paths.raw_maps, "1:500")
 # crl + K + C    comment
 # crl + K + U    uncomment
 
@@ -254,7 +272,6 @@ if __name__=="__main__":
 # the coords are saved into csv file
     #mymap.save_points_to_file()
 
-
 # get the scale from file with points
     #mymap._calculate_lengths_from_file()
 
@@ -262,7 +279,7 @@ if __name__=="__main__":
     #mymap.get_scale()
 
 # create map with pillow with pillow:
-    mymap.scale_map_with_pillow()
+    #mymap.scale_map_with_pillow()
 
 # check with cv2:
     #mymap.scale_map_with_CV2()
