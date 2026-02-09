@@ -14,7 +14,7 @@ based on the legal regulation crate geospatial data base which can automaticaly 
 
 ---
 
-## 1. START: 06.02.2026
+## 1. START: 
    * create virtual envitoment using: '''python -m venv venv
    * acctivate tge enviroment: source .venv/bin/activate (Windows:  .\venv\Scripts\activate)
    * open terminal and install file requrements.txt with quiery: pip install -r .\requrements.txt
