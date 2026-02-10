@@ -1,6 +1,6 @@
 # Concept:
-### EN: Digitization of scans of basic raster maps using AI in accordance with applicable legal regulations in Poland
-### PL: Digitalizacja skanów zasadniczych map rastrowych przy uzyciu AI zgodnie z obowiazujacymi przepisami prawa w Polsce
+### EN: Vectorization of scans of basic raster maps using AI in accordance with applicable legal regulations in Poland
+### PL: Wektoryzacja skanów zasadniczych map rastrowych przy uzyciu AI zgodnie z obowiazujacymi przepisami prawa w Polsce
 project started : 06.02.2026\
 \
 **raw map example:**\
