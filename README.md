@@ -26,6 +26,15 @@ geospatial data base where each object contains georeferences and metadata\
 use file paths.py to set up the folders with files
 
 ## 3. Get cross-points for local coordinate system for the picture
-Scale the map to get the map in correct proportions (keep the map content in the same size for diffrent type of objects in pixels). For that should be used file MapScaler.py
+Scale the map to get the map in correct proportions (keep the map content in the same size for diffrent type of objects in pixels). For that should be used file MapScaler.py. 
+Scalling the map is doing throught library Pillow and OpenCV using different method and file formats. 
+All files are saved in scalled_map folder
+
+## 4. Choose the best map and clean
+Choose the best map from scalled_map folder and clean the noises. The file is saved in folder maps_for_processing
+
+**Compare result of cleaned maps_for_processing and choosen scalled_map**
+<img width="1888" height="686" alt="obraz" src="https://github.com/user-attachments/assets/14c61f24-011e-4528-8bab-1dca695addbd" />
+
 
 
