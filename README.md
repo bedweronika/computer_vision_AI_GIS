@@ -19,7 +19,7 @@ geospatial data base where each object contains georeferences and metadata\
 
 ## 1. START: 
    * create virtual envitoment using: ```python -m venv venv```
-   * acctivate tge enviroment: source ```.venv/bin/activate``` (Windows:  ```.\venv\Scripts\activate```)
+   * acctivate tge enviroment: ```source .venv/bin/activate``` (Windows:  ```.\venv\Scripts\activate```)
    * open terminal and install file requrements.txt with quiery: ```pip install -r .\requrements.txt```
 
 ## 2. Files 
@@ -32,6 +32,8 @@ All files are saved in scalled_map folder
 
 ## 4. Choose the best map and clean
 Choose the best map from scalled_map folder and clean the noises. The file is saved in folder maps_for_processing
+
+The proccess and analysis are provided in jupiter notebook ```analysis_scalled_raster_map.ipynb```  wich is not pat of the repository.
 
 **Compare result of cleaned maps_for_processing and choosen scalled_map**
 <img width="1888" height="686" alt="obraz" src="https://github.com/user-attachments/assets/14c61f24-011e-4528-8bab-1dca695addbd" />
