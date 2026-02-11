@@ -1,4 +1,4 @@
-import paths
+from config import paths
 
 import matplotlib.pyplot as plt
 import numpy as np
