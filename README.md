@@ -22,6 +22,8 @@ geospatial data base where each object contains georeferences and metadata\
    * acctivate tge enviroment: ```source .venv/bin/activate``` (Windows:  ```.\venv\Scripts\activate```)
    * open terminal and install file requrements.txt with quiery: ```pip install -r .\requrements.txt```
 
+### VSCode is recomended for this project. Other application requre to set path to config folder
+
 ## 2. Files 
 use file paths.py to set up the folders with files
 
