@@ -33,7 +33,7 @@ if to_print:
 
 
 """
-32 bathes
+32 batches
 55000 images
 1719 batches per epoch   ->   1718 of size 32 + 1 size of 24
 """
