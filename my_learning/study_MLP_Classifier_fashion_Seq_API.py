@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-from a_sequential_API import model
+from funct.sequential_API import model
 
 to_print = False
 
