@@ -12,5 +12,5 @@ proccesed_maps=f"{folder_maps}proccesed_maps/"    # folder with images with maps
 raw_map_cross_points = f"{folder_maps}raw_map_cross_points/" 
 
 # scalled maps
-scalled_maps_pillow = f"{folder_maps}pillow/"
-scalled_maps_cv2 = f"{folder_maps}cv2/"
+scalled_maps_pillow = f"{scalled_maps}pillow/"
+scalled_maps_cv2 = f"{scalled_maps}cv2/"
