@@ -25,6 +25,8 @@ geospatial data base where each object contains georeferences and metadata\
 ## 2. Files 
 use file paths.py to set up the folders with files
 
+Current file are downloaded from google so the maps are processed to get required distance between the cross-points on a map at scale of 1:500 and clean the files from noises (extra pixels that mean nothing)
+
 ## 3. Get cross-points for local coordinate system for the picture
 Scale the map to get the map in correct proportions (keep the map content in the same size for diffrent type of objects in pixels). For that should be used file MapScaler.py. 
 Scalling the map is doing throught library Pillow and OpenCV using different method and file formats. 
