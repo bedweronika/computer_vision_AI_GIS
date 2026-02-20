@@ -37,6 +37,9 @@ Choose the best map from scalled_map folder and clean the noises. The file is sa
 
 The proccess and analysis are provided in jupiter notebook ```analysis_scalled_raster_map.ipynb```.
 
+## 5. Cut the file from the map
+concept: cut the map to get files with the size of the given pixels to get smaller files of map. Each file will cover 20% of previous tile. each tile will have the coordinate of the corner -> left top and right bottom.
+
 **Compare result of cleaned maps_for_processing and choosen scalled_map**
 <img width="1888" height="686" alt="obraz" src="https://github.com/user-attachments/assets/14c61f24-011e-4528-8bab-1dca695addbd" />
 
