@@ -7,7 +7,11 @@ create class MapScaller with methods get_cross_point_ccordinates_from_raw_map() 
 MapScaller mathods: _convert_tuple_np_float_to_touple_float(), get_the_scale_from_file()
 20260210
 jupyter notebook to analize the image files and choose the best, clean the map (change noises for white color) 
-
+20260213-20260218
+self learing tensorflow and keras
+20260219
+create class ReadMapCV2 to load img using OpenCV python libary -> for open file with scaled map (maps for proccesing
+create class MapTileCutter uwing paert class ReadMapCV2 with method get_file_id
 
 
 
@@ -16,8 +20,7 @@ jupyter notebook to analize the image files and choose the best, clean the map (
  ------------------------------------
  TODO: 
  new class to cut the images:
- - open file with scaled map
- - choose the ocjects fro mthe map and save them to image for computer vision/DL
+ - choose the ocjects from the map and save them to image for computer vision/DL
 
 
 future problems:
