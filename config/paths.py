@@ -1,6 +1,8 @@
 #path to folder with files
 files_folder="./files/" 
 folder_maps = f"{files_folder}maps/"
+folder_tiles = f"{files_folder}tiles/"
+folder_tiles_json = f"{folder_tiles}json/"
 
 #paths to folder with maps
 raw_maps=f"{folder_maps}raw_maps/"    # folder with images with maps
