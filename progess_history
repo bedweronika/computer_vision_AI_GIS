@@ -12,6 +12,8 @@ self learing tensorflow and keras
 20260219
 create class ReadMapCV2 to load img using OpenCV python libary -> for open file with scaled map (maps for proccesing
 create class MapTileCutter uwing paert class ReadMapCV2 with method get_file_id
+20260221
+get the tiles with given size in pixel
 
 
 
@@ -19,8 +21,8 @@ create class MapTileCutter uwing paert class ReadMapCV2 with method get_file_id
 
  ------------------------------------
  TODO: 
- new class to cut the images:
- - choose the ocjects from the map and save them to image for computer vision/DL
+- cut the samples
+- store the samples
 
 
 future problems:
